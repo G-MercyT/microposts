@@ -18,9 +18,26 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(profile_params)
+      redirect_to edit_user_path , notice: 'プロフィールが更新されました'
+    else
+      render 'edit'
+    end
+  end
+  
   private
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmataion)
+  end
+  
+  def profile_params
+    params.require(:user).permit(:name, :email, :description, :area)
   end
 end
