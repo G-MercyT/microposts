@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
     
     validates :description, presence: true, length: { maximum: 140 }, on: :update
     validates :area, presence: true, length: { maximum: 30 }, on: :update
+    has_many :microposts
 end
