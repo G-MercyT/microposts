@@ -1,6 +1,11 @@
-<h2>Followings</h2>
-<ul>
-  <% @followings.each do |u| %>
-    <%= render ‘user', user: u %>
-  <% end %>
-</ul>
+<%= render 'user_icon' %>
+<div class="col-md-8">
+  <h2>Followings</h2>
+  <div id="userlist">
+    <ul>
+      <% @followings.each do |u| %>
+        <%= render 'user', user: u %>
+      <% end %>
+    </ul>
+  </div>
+</div>
