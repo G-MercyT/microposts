@@ -1,10 +1,6 @@
-<%= render 'user_icon' %>
-    <div class="col-md-8">
-        <% if @user.follower_users.any? %>
-            <h3>Followers (<%= @user.follower_users.count %>)</h3>
-            <ol class="microposts">
-                <%= render @follower %>
-            </ol>
-        <% end %>
-    </div>
-</div>
+<h2>Followers</h2>
+<ul>
+  <% @followers.each do |u| %>
+    <%= render ‘user', user: u %>
+  <% end %>
+</ul>
