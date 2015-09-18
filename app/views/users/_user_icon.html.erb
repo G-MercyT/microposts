@@ -5,7 +5,7 @@
                 <%= gravatar_for @user %>
                 <%= @user.name %>
             </h1>
-            <span><%= link_to "Followings", followings_user_path(@user) %></span>
-            <span><%= link_to "Followers", followers_user_path(@user) %></span>
+            <span><%= link_to t('view.followings'), followings_user_path(@user) %></span>
+            <span><%= link_to t('view.followers'), followers_user_path(@user) %></span>
         </section>
     </aside>

@@ -1,4 +1,4 @@
-<h1>Log in</h1>
+<h1><%= t('view.login') %></h1>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -10,9 +10,9 @@
             <%= f.label :password %>
             <%= f.password_field :password, class: 'form-control' %>
             
-            <%= f.submit "Log in", class: "btn btn-primary" %>
+            <%= f.submit t('view.hello'), class: "btn btn-primary" %>
         <% end %>
         
-        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        <p>New user? <%= link_to t('view.signupnow'), signup_path %></p>
     </div>
 </div>
