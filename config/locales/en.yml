@@ -208,6 +208,7 @@ en:
     microposts: "Microposts"
     signup: "Sign up"
     signupnow: "Sign up now!"
+    newuser?: "New user?"
     confirmation: "Confirmation"
     createmycount: "Create my account"
     followings: "Followings"

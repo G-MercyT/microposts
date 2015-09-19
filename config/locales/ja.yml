@@ -198,6 +198,7 @@ ja:
     microposts: "マイクロポスト"
     signup: "サインアップ"
     signupnow: "サインアップしよう！"
+    newuser?: "新規ユーザーですか？"
     confirmation: "確認"
     createmycount: "アカウント作成"
     followings: "フォロー数"
