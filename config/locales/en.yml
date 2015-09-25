@@ -231,3 +231,6 @@ en:
     welcome: "Welcome to the Microposts"
     viewmyprofile: "view my profile"
     language: "Select language"
+    name: "Name"
+    email: "Email"
+    password: "Password"

@@ -11,6 +11,11 @@ Rails.application.routes.draw do
       get :followers
     end
   end
+  
+  resources :microposts do
+    resource :favorite, module: 'micropost', only: [:show, :update, :destroy]
+  end
+  
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :relationships, only: [:create, :destroy]

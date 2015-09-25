@@ -5,13 +5,13 @@
         <%= form_for(@user) do |f| %>
             <%= render 'shared/error_messages', object: f.object %> <!--ここを追加-->
         
-            <%= f.label :name %>
+            <%= f.label :name, t('view.name') %>
             <%= f.text_field :name %>
             
-            <%= f.label :email %>
+            <%= f.label :email, t('view.email') %>
             <%= f.text_field :email %>
             
-            <%= f.label :password %>
+            <%= f.label :password, t('view.password') %>
             <%= f.password_field :password %>
             
             <%= f.label :password_confirmation, t('view.confirmation') %>

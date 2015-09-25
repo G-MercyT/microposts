@@ -221,3 +221,6 @@ ja:
     welcome: "ようこそマイクロポストへ"
     viewmyprofile: "プロフィールを見る"
     language: "言語選択"
+    name: "名前"
+    email: "Eメール"
+    password: "パスワード"

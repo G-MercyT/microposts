@@ -17,12 +17,15 @@ class User < ActiveRecord::Base
     has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
     
+    has_many :favorites
+    has_many :favorite_microposts, class_name: "Micropost", foreign_key: "micropost_id", through: :favorites, source: :user, dependent: :destroy
+    
     # 他のユーザーをフォローする
     def follow(other_user)
         following_relationships.create(followed_id: other_user.id)
     end
     
-    #フォローしているユーザーをアンフォローする
+    #フォローしているユーザーの投稿のお気に入りを解除する
     def unfollow(other_user)
         following_relationships.find_by(followed_id: other_user.id).destroy
     end
