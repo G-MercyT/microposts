@@ -234,3 +234,6 @@ en:
     name: "Name"
     email: "Email"
     password: "Password"
+    favoritebtn: "Favorite"
+    unfavoritebtn: "Unfavorite"
+    favotites: "Favotites"

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @microposts = @user.microposts
     @following = @user.following_users
     @follower = @user.follower_users
+    @favorite = @user.favorite_microposts
   end
     
   def new
@@ -42,6 +43,11 @@ class UsersController < ApplicationController
   def followers
     @user = User.find(params[:id])
     @followers = @user.follower_users
+  end
+
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @micropost.follower_users
   end
   
   private

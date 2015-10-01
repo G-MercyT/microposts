@@ -14,15 +14,14 @@
 ActiveRecord::Schema.define(version: 20150925065432) do
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "favorite_id"
-    t.integer  "unfavorite_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "favorites", ["favorite_id", "unfavorite_id"], name: "index_favorites_on_favorite_id_and_unfavorite_id", unique: true
-  add_index "favorites", ["favorite_id"], name: "index_favorites_on_favorite_id"
-  add_index "favorites", ["unfavorite_id"], name: "index_favorites_on_unfavorite_id"
+  add_index "favorites", ["micropost_id"], name: "index_favorites_on_micropost_id"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"

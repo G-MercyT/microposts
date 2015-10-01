@@ -2,4 +2,5 @@
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
     <span class="content"><%= micropost.content %></span>
+    <span class="favorite"><%= render partial: 'users/favorite_form', locals: { micropost: micropost } if logged_in? %></span>
 </li>

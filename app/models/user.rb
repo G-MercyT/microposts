@@ -17,15 +17,15 @@ class User < ActiveRecord::Base
     has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
     
-    has_many :favorites
-    has_many :favorite_microposts, class_name: "Micropost", foreign_key: "micropost_id", through: :favorites, source: :user, dependent: :destroy
+    has_many :favorites, dependent: :destroy
+    has_many :favorite_microposts, class_name: "Micropost", foreign_key: "micropost_id", through: :favorites, source: :micropost
     
     # 他のユーザーをフォローする
     def follow(other_user)
         following_relationships.create(followed_id: other_user.id)
     end
     
-    #フォローしているユーザーの投稿のお気に入りを解除する
+    # フォローしているユーザーを解除する
     def unfollow(other_user)
         following_relationships.find_by(followed_id: other_user.id).destroy
     end
@@ -33,6 +33,21 @@ class User < ActiveRecord::Base
     #フォローしているかどうか
     def following?(other_user)
         following_users.include?(other_user)
+    end
+    
+    # 他の投稿をお気に入りする
+    def favorite(other_micropost)
+        favorites.create(micropost_id: other_micropost.id)
+    end
+    
+    # お気に入りしている投稿を削除する
+    def unfavorite(other_micropost)
+        favorites.find_by(micropost_id: other_micropost.id).destroy
+    end
+    
+    # ある投稿をお気に入りしているかどうか？
+    def favorite?(other_micropost)
+        favorites.include?(other_micropost)
     end
     
     #ユーザーのつぶやきを取得する

@@ -224,3 +224,6 @@ ja:
     name: "名前"
     email: "Eメール"
     password: "パスワード"
+    favoritebtn: "お気に入りに追加"
+    unfavoritebtn: "お気に入りから削除"
+    favotites: "お気に入り一覧"

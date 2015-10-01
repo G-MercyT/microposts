@@ -7,5 +7,6 @@
             </h1>
             <span><%= link_to t('view.followings'), followings_user_path(@user) %></span>
             <span><%= link_to t('view.followers'), followers_user_path(@user) %></span>
+            <span><%= link_to t('view.favotites'), favorites_micropost_path(@user) %></span>
         </section>
     </aside>

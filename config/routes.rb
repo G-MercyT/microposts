@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   end
   
   resources :microposts do
-    resource :favorite, module: 'micropost', only: [:show, :update, :destroy]
+    member do
+      get :favorites
+    end
   end
   
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 end

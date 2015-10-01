@@ -19,6 +19,11 @@ class MicropostsController < ApplicationController
         redirect_to request.referrer || root_url
     end
     
+    def favorites
+        @micropost = current_user.microposts.find_by(id: params[:id])
+        @favorites = @user.favorite_microposts
+    end
+    
     private
     def micropost_params
         params.require(:micropost).permit(:content)
